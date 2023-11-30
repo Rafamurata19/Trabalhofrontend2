@@ -9,6 +9,7 @@ async function obterCoordenadasCidade() {
     try {
         const resposta = await axios.get(url);
         const coordenadas = resposta.data[0].lat + ',' + resposta.data[0].lon;  
+        console.log('latitude: ' + coordenadas.split(',')[0] + ' \nlongitude: ' + coordenadas.split(',')[1])
         return coordenadas;
     } catch (erro) {
         console.error('Erro ao obter coordenadas da cidade:', erro.message);
